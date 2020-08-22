@@ -1,5 +1,5 @@
 let localStorage = window.localStorage;
-
+let textBox9=document.querySelector('#text-box9');
 // const timeHours = ['9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM', '5:00 PM',]
 let currentDay = document.querySelector('#current-day');
 let boxSpan9 = document.querySelector('#box9');
@@ -31,21 +31,25 @@ $(document).ready(function () {
         // let input = $('#text-box9').val()
         // localStorage.setItem(event.target.id,JSON.stringify(input))
         // let item= localStorage.getItem('schedule');
-
-
-
+        // $('#text-box9').val('#9AMButton');
         // console.log('item', item)
         // console.log('EVENT--->', event)
-        var input = localStorage.getItem('input');
-        // var storedInput=JSON.parse(localStorage.getItem(input));
-        var storedInput= JSON.parse(localStorage.getItem('input'));
+        // console.log('schedule--->', schedule)
+
+        let schedule=localStorage.getItem('inputKey') || localStorage.setItem('inputKey', JSON.stringify({}));
         var inputValue= $('#text-box9').val();
-        localStorage.setItem('input', input)
-        localStorage.setItem('input', JSON.stringify(inputValue));
-      
-        console.log(input);
-        console.log(storedInput);
-        console.log(inputValue);
+        // // var input = localStorage.getItem('inputKey');
+        // // var storedInput=JSON.parse(localStorage.getItem(input));
+        // // var storedInput= JSON.parse(localStorage.getItem('inputKey'));
+        localStorage.setItem('inputKey', inputValue)
+        // localStorage.setItem(event.target.id, JSON.stringify(inputValue));
+        let item= JSON.parse(localStorage.getItem('inputKey'));
+        // $("text-box9").val(inputValue);
+        textBox9.textContent=inputValue;
+        // console.log(schedule);
+        // console.log(event);
+        // console.log(inputValue);
+        console.log(item);
         
        
         
