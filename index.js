@@ -13,14 +13,15 @@ $(document).ready(function () {
 
             $('.hour').each(function() {
                 let currentHour=moment().hour(hoursOfDay[i]);
-                currentHour.minutes(0);
-                console.log(currentHour);
+               var hourhour =  currentHour.minutes(0);
+                
                 
                 if (currentHour.hour() < moment().hour()) {
                     $(this).parent().addClass('past');
                 } 
                 else if (currentHour.hour = moment().hour()) {
                     $(this).parent().addClass('present');
+                    
                 } 
                 else if (currentHour.hour > moment().hour()) {
                     $(this).parent().addClass('future');
@@ -31,7 +32,7 @@ $(document).ready(function () {
     }
     date();
    
-    var inputText=localStorage.getItem('inputKey');
+    var inputText=localStorage.getItem('9AMButton');
     $('#text-box9').val(inputText);
 
     $('#9AMButton').on('click', function (event) {
